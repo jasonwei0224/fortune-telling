@@ -65,38 +65,44 @@ window.onload=function(){
      // 1. laugh
      // 2. Granted
      // 3. No
-     if(timesPlayed === 3){
+	 if(timesPlayed === 3){
 		 godMood = 2;
-		 //console.log("Mood:" + godMood);
-      }
-	  else{
+		 console.log("Mood:" + godMood);
+	 }
+	else{
      godMood = random(3)+1;
-	   }
-	    //console.log("Mood:" + godMood);
+	}
+	console.log("Mood:" + godMood);
    }
    // checks the decision of god
    function checkDecision(){
-     getDecision();
+	   getDecision();
+	   console.log("Mood:" + godMood);
      if(godMood === 1){
        //display NO image if the number is one and display the restart button
        imageDisplay.src = "bad.png";
        startButton.style.display = "none";
        restartButton.style.display = "";
-
+		timesPlayed = timesPlayed +1;
+		console.log("Times Played:" + timesPlayed);
      }
      else if (godMood === 2){
        //display the Yes image if the number is 2 and give link to the explanation
        imageDisplay.src = "good.png";
        link.style.display = "" ;
        document.getElementsByTagName("a").href = godChoice + ".html";
+	   console.log("Times Played:" + timesPlayed);
      }
      else{
        //display the laughing image if the number is 3 and the restart button
        imageDisplay.src = "laugh.png"
        startButton.style.display = "none";
        restartButton.style.display = "";
+	   timesPlayed = timesPlayed +1;
+	   console.log("Times Played:" + timesPlayed);
        }
    }
+   console.log("Times Played:" + timesPlayed);
    restartButton.onclick = startDraw; //restart the process
 
 
