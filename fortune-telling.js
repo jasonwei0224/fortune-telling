@@ -4,7 +4,7 @@ window.onload=function(){
   let numberOfSticks = 0;
   let godChoice = 0;
   let godMood = 0;
-
+  let timesPlayed = 0;
   imageDisplay = document.getElementById("imageDisplay");
   startButton = document.getElementById("startButton");
   restartButton = document.getElementById("restartButton");
@@ -65,10 +65,18 @@ window.onload=function(){
      // 1. laugh
      // 2. Granted
      // 3. No
-     godMood = random(3);
+     if(timesPlayed === 3){
+		 godMood = 2;
+		 //console.log("Mood:" + godMood);
+      }
+	  else{
+     godMood = random(3)+1;
+	   }
+	    //console.log("Mood:" + godMood);
    }
    // checks the decision of god
    function checkDecision(){
+     getDecision();
      if(godMood === 1){
        //display NO image if the number is one and display the restart button
        imageDisplay.src = "bad.png";
