@@ -1,0 +1,54 @@
+#startButton, #restartButton{
+  font-size: 2em;
+  padding: 20px;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+}
+#header{
+  background-color:pink;
+  position: absolute;
+  height:5%;
+  top:0%;
+  width:100%;
+  left:0%;
+}
+#navbar{
+  background-color:black;
+  position:absolute;
+  top:5%;
+  height:46px;
+  width: 100%;
+  left: 0%;
+}
+#footer{
+  background-color: black;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 5%;
+  padding: 0%;
+  left:0%;
+  color: white;
+}
+#footer.p{
+  text-align: center;
+}
+#imageDisplay{
+  position:absolute;
+  left:40%;
+  height: 50%;
+  width: auto;
+  bottom:30%;
+}
+#content{
+  position:absolute;
+  top:15%;
+  left:5%;
+  right:5%;
+}
+#fortune-telling h1{
+  position: absolute;
+  top: 35%;
+  left: 43%;
+}
