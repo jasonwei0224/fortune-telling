@@ -1,6 +1,6 @@
 # fortune-telling
 Fortune-telling web app, this app is a mock of the process of asking fortune at a temple in Taiwan. 
-
+An working example of this app https://fortune-telling.herokuapp.com
 # Getting Started 
 Downlaod repository, unzip, and open the index.html with a web browser (recommend Chrome, Firefox) and you are good to go.
 
