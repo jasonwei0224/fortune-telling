@@ -31,15 +31,19 @@ window.onload=function(){
   link.style.display = "none";
   restartButton.style.display = "none";
 
-
+  /*random function
+  generate a random number
+  @param maxNumber - max number
+  */
   function random(maxNumber){
     return Math.floor(Math.random()* maxNumber);
   }
 
   //when clicked start button dispaly rule
   function startDraw(){
-    //generate a random number that'll be use to determine how long the 籤筒is displayed
-    // maximum display time is 15 second
+    /* generate a random number that'll be use to determine how long the lottery
+    box is displayed
+    maximum display time is 15 second  */
     numberOfSeconds = random(15)*1000;
 
     // hide the game description when start
@@ -57,10 +61,11 @@ window.onload=function(){
 
     //display draw after x number of second
     setTimeout(getDraw, numberOfSeconds);
-    //console.log(numberOfSeconds);
   }
     startButton.onclick = startDraw;
-
+    /*
+      Decide the number that user get
+    */
    function getDraw(){
      godChoice = random(13); //use random to decide on which choice user gets
      //skip the number 0, or 4
@@ -68,7 +73,8 @@ window.onload=function(){
        godChoice = random(13);
      }
 
-     //generate a random number that'll be use to determine how long the ask permission is gonna take
+     //generate a random number that'll be use to determine how long the ask
+     //permission is gonna take
      numberOfSeconds = random(15)*1000;
      //console.log(numberOfSeconds);
      imageDisplay.style.display = 'none';
@@ -81,12 +87,15 @@ window.onload=function(){
      imageDisplay.style.bottom= "35%";
      imageDisplay.style.left = "48%";
      imageDisplay.style.display = "";
-     //change button to continue;
+     //change button's text to continue;
      startButton.innerText = "continue";
      startButton.style.display = "";
      startButton.onclick = askPermission;
    }
-
+   
+   /*
+   when user clicks on continue it runs the askPermission function
+   */
    function askPermission(){
      //display user asking for permission
      imageDisplay.src = "lottery2.gif";
@@ -109,19 +118,23 @@ window.onload=function(){
      // 3. No
 	    if(timesPlayed === 3){
 		      godMood = 2;
-		        //console.log("Mood:" + godMood);
-          }
+      }
       else{
         godMood = random(3)+1;
       }
-	     //console.log("Mood:" + godMood);
    }
-   // checks the decision of god
+
+   /*
+    Check the decision by running getDecision method
+    if number is 1 display no divine image user needs to restart
+    if number is 2 display good divine image user continue to the description
+    if number is 3 display laugh divine image user needs to restart
+   */
    function checkDecision(){
 	   getDecision();
 	   console.log("Mood:" + godMood);
      if(godMood === 1){
-       //display NO image if the number is one and display the restart button
+       //display NO divine image if the number is 1 and display the restart button
        imageDisplay.src = "bad.png";
        imageDisplay.style.width = "auto";
        imageDisplay.style.bottom = "30%";
@@ -133,7 +146,7 @@ window.onload=function(){
 		 //console.log("Times Played:" + timesPlayed);
      }
      else if (godMood === 2){
-       //display the Yes image if the number is 2 and give link to the explanation
+       //display the good divine image if the number is 2 and give link to the explanation
        imageDisplay.src = "good.png";
        imageDisplay.style.width = "auto";
        imageDisplay.style.bottom = "30%";
@@ -149,10 +162,9 @@ window.onload=function(){
 
        //restartButton.style.display="";
        document.getElementsByTagName("a").href = godChoice + ".html";
-	     //console.log("Times Played:" + timesPlayed);
      }
      else{
-       //display the laughing image if the number is 3 and the restart button
+       //display the laughing divine image if the number is 3 and the restart button
        imageDisplay.src = "laugh.png"
        imageDisplay.style.width = "auto";
        imageDisplay.style.bottom = "30%";
@@ -162,12 +174,7 @@ window.onload=function(){
        startButton.style.display = "none";
        restartButton.style.display = "";
 	     timesPlayed = timesPlayed +1;
-	   //console.log("Times Played:" + timesPlayed);
        }
    }
-   //console.log("Times Played:" + timesPlayed);
    restartButton.onclick = startDraw; //restart the process
-
-
-
 }
