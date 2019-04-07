@@ -11,17 +11,17 @@ window.onload=function(){
   startButton = mainSection.appendChild(document.createElement('BUTTON'));
   startButton.appendChild(document.createTextNode("Start"));
   startButton.id = "startButton";
-  startButton.style.left="43%";
-  startButton.style.bottom="20%";
-  startButton.style.width="200px";
+  startButton.style.left = "43%";
+  startButton.style.bottom = "20%";
+  startButton.style.width = "200px";
   startButton = document.getElementById("startButton");
 
   //create format restart button
   restartButton = mainSection.appendChild(document.createElement('BUTTON'));
   restartButton.appendChild(document.createTextNode("Restart"));
-  restartButton.style.left="43%";
-  restartButton.style.bottom="20%";
-  restartButton.style.width="200px";
+  restartButton.style.left = "43%";
+  restartButton.style.bottom = "20%";
+  restartButton.style.width = "200px";
   restartButton.id = "restartButton";
   restartButton = document.getElementById("restartButton");
 
@@ -36,7 +36,7 @@ window.onload=function(){
   @param maxNumber - max number
   */
   function random(maxNumber){
-    return Math.floor(Math.random()* maxNumber);
+    return Math.floor(Math.random() * maxNumber);
   }
 
   //when clicked start button dispaly rule
@@ -55,9 +55,9 @@ window.onload=function(){
     imageDisplay.style.display = "";
     //display the gif of user shaking the lottery box
     imageDisplay.src = "lottery.gif";
-    imageDisplay.style.left= "40%";
-    imageDisplay.style.bottom="20%";
-    imageDisplay.style.position="absolute";
+    imageDisplay.style.left = "40%";
+    imageDisplay.style.bottom = "20%";
+    imageDisplay.style.position = "absolute";
 
     //display draw after x number of second
     setTimeout(getDraw, numberOfSeconds);
@@ -82,9 +82,9 @@ window.onload=function(){
      imageDisplay.src = godChoice + ".png";
 
      //change the location of the image
-     imageDisplay.style.height="50%";
+     imageDisplay.style.height = "50%";
      imageDisplay.style.width = 'auto';
-     imageDisplay.style.bottom= "35%";
+     imageDisplay.style.bottom = "35%";
      imageDisplay.style.left = "48%";
      imageDisplay.style.display = "";
      //change button's text to continue;
@@ -92,7 +92,7 @@ window.onload=function(){
      startButton.style.display = "";
      startButton.onclick = askPermission;
    }
-   
+
    /*
    when user clicks on continue it runs the askPermission function
    */
